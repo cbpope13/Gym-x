@@ -34,12 +34,9 @@ export default function Home() {
 					</motion.div>
 				</div>
 				{/*What we do section*/}
-				<div className="bg-neutral-800 flex p-6 relative">
-					<div className="grayscale">
-						<Image src="/girls.webp" alt="Hero" width="800" height="500" />
-					</div>
-					<div className="">
-						<div className="bg-neutral-900 bg-opacity-50 text-white p-4 max-w-xl flex flex-col space-y-6 absolute right-6">
+				<div className="bg-[url('/gym.png')] bg-cover border-[20px] border-neutral-900 flex p-6 justify-end">
+					<div className="max-w-xl">
+						<div className="bg-neutral-900 bg-opacity-75 text-white p-4 flex flex-col space-y-6">
 							<motion.p
 								initial={{ y: '100px', opacity: '0%' }}
 								whileInView={{
@@ -72,6 +69,60 @@ export default function Home() {
 								totam iusto?
 							</motion.p>
 						</div>
+						<motion.div
+							initial={{ x: '-200px', opacity: '0%' }}
+							whileInView={{
+								x: '0px',
+								opacity: '100%',
+								transition: { duration: 1, delay: 0.25 },
+							}}
+							viewport={{ once: true }}
+							className="bg-neutral-900 bg-opacity-75 text-white p-4 flex space-x-6"
+						>
+							<div>
+								<Image src="/weight.svg" alt="weight" width="120" height="20" />
+							</div>
+							<div className="flex flex-col">
+								<i className="text-4xl text-red-600">Classes</i>
+								<p className="font-sans mb-4">
+									Check out the multiple fitness classes we offer. We can’t wait
+									to see you at one or more of them! Feel free to contact us
+									with any questions.
+								</p>
+								<div>
+									<button className="bg-red-600 rounded-sm text-white text-xl flex space-x-3 items-center px-6 py-1 hover:bg-red-700 transition duration-200">
+										<i>Learn more!</i>
+									</button>
+								</div>
+							</div>
+						</motion.div>
+						<motion.div
+							initial={{ x: '-200px', opacity: '0%' }}
+							whileInView={{
+								x: '0px',
+								opacity: '100%',
+								transition: { duration: 1, delay: 0.25 },
+							}}
+							viewport={{ once: true }}
+							className="bg-neutral-900 bg-opacity-75 text-white p-4 flex space-x-6"
+						>
+							<div>
+								<Image src="/scale.svg" alt="scale" width="130" height="20" />
+							</div>
+							<div className="flex flex-col">
+								<i className="text-4xl text-red-600">Personal Training</i>
+								<p className="font-sans mb-4">
+									Gym-X offers one-on-one personal training to help you achieve
+									your fitness goals. Our certified trainers will create
+									challenging workout programs for you.
+								</p>
+								<div>
+									<button className="bg-red-600 rounded-sm text-white text-xl flex space-x-3 items-center px-6 py-1 hover:bg-red-700 transition duration-200">
+										<i>Learn more!</i>
+									</button>
+								</div>
+							</div>
+						</motion.div>
 					</div>
 				</div>
 				{/*CTA*/}
@@ -177,9 +228,20 @@ export default function Home() {
 				{/*Memberships*/}
 				<div
 					id="memberships"
-					className="bg-white p-10 flex flex-col space-y-4 items-center"
+					className="bg-white px-10 py-20 flex flex-col space-y-10 items-center"
 				>
-					<i className="text-6xl">Memberships</i>
+					<motion.i
+						initial={{ y: '100px', opacity: '0%' }}
+						whileInView={{
+							y: '0px',
+							opacity: '100%',
+							transition: { duration: 0.5, delay: 0.25 },
+						}}
+						viewport={{ once: true }}
+						className="text-6xl"
+					>
+						Memberships
+					</motion.i>
 					<div className="flex flex-col space-y-6 w-full">
 						<motion.div
 							initial={{ x: '-500px', opacity: '0%' }}
@@ -257,6 +319,7 @@ export default function Home() {
 					<Image
 						src="/girls.png"
 						width={1200}
+						alt="girls"
 						height={200}
 						className="-translate-x-48"
 					/>
